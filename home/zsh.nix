@@ -18,7 +18,17 @@
   shellAliases = {
     vi = "vim";
     ls = "exa";
+    open = "detach xdg-open";
+    o = "open";  
+    py = "python";
+    clip = "xclip";
   };
+
+  initExtra = ''
+    function detach {
+       nohup $@ >/dev/null 2>&1
+    }
+  '';
 
   dirHashes = {
     # Shortcuts for popular locations

@@ -12,6 +12,7 @@
       ./hardware-configuration.nix
       ./interception-tools.nix
       ./home/anuejn.nix
+      <home-manager/nixos>
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -40,25 +41,38 @@
     xserver = {
       enable = true;
       displayManager.gdm.enable = true;
-      displayManager.gdm.wayland = false;
+      displayManager.gdm.wayland = true;
       desktopManager.gnome.enable = true;
     };
 
     dbus.packages = [ pkgs.gnome3.dconf ];
     udev.packages = [ pkgs.gnome3.gnome-settings-daemon ];
+    gnome.chrome-gnome-shell.enable = true; # this is for the firefox extentions support
+    earlyoom = {
+      enable = true;
+      freeMemThreshold = 1;
+      enableNotifications = true;  # TODO: actually display these notifications
+    };
   };
 
   services.printing.enable = true;
 
   environment.systemPackages = with pkgs; [
     vim
+    htop
+    killall
   ];
-  
+
   programs = {
     dconf.enable = true;
     zsh.enable = true;
+    xwayland.enable = true;
   };
 
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
+
+  zramSwap.enable = true;
   networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
