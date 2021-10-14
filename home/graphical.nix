@@ -18,6 +18,9 @@
     libreoffice
 
     kicad
+
+    gnomeExtensions.night-theme-switcher
+    gnomeExtensions.gtk-title-bar
   ];
 
   # some more or less advanced firefox configuration

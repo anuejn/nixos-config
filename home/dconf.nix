@@ -1,5 +1,5 @@
 # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
   mkTuple = lib.hm.gvariant.mkTuple;
 in
@@ -59,6 +59,7 @@ in
         switch-to-application-9 = [ ];
         switch-to-application-10 = [ ];
       };
+      "org/gnome/shell".disable-user-extensions = false;
     };
   };
 }

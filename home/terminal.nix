@@ -9,7 +9,8 @@
     cargo
     clang
 
-    nodejs
+    nodejs-slim
+    nodePackages.npm
     python3
 
     pandoc
