@@ -9,17 +9,7 @@
       (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.luks.devices = {
-    luksroot = {
-      device = "/dev/disk/by-partuuid/d6f267a1-e082-0f45-9396-ba56d9274c32";
-      allowDiscards = true;
-      preLVM = true;
-    };
-  };
-
-  boot.loader.grub.device = "/dev/disk/by-partuuid/ca2e3d9e-c592-b143-8a54-34a040c9c56a";
-
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "uas" "sd_mod" "rtsx_pci_sdmmc" "aesni_intel" "cryptd" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "rtsx_pci_sdmmc" ];
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -37,10 +27,7 @@
     };
 
   swapDevices =
-    [{
-      device = "/dev/disk/by-uuid/6f516e43-0318-4559-b48e-b3243ea6befe";
-      priority = 1;
-    }];
+    [{ device = "/dev/disk/by-uuid/6f516e43-0318-4559-b48e-b3243ea6befe"; }];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }

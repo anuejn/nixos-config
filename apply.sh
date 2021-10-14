@@ -8,4 +8,5 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 rsync -v --delete -r . /etc/nixos
-nixos-rebuild switch -j auto
+ln -s /etc/nixos/hosts/$(hostname)/configuration.nix /etc/nixos/configuration.nix
+nixos-rebuild switch -j auto --show-trace $*

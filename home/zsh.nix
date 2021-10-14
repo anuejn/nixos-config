@@ -1,44 +1,66 @@
-{
-  enable = true;
-  enableCompletion = true;
-  enableAutosuggestions = true;
+{ pkgs, lib, ... }: {
+  home.packages = with pkgs; [
+    xclip
+  ];
+  programs = {
+    exa = { enable = true; enableAliases = true; };
+    bat.enable = true;
+    autojump.enable = false;
+    zoxide.enable = true;
+    fzf.enable = true;
 
-  history = {
-    size = 100000;
-    save = 2000000;
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
   };
-
-  oh-my-zsh = {
+  programs.zsh = {
     enable = true;
-    plugins = [
-      "history"
-    ];
-  };
+    enableCompletion = true;
+    enableAutosuggestions = true;
 
-  shellAliases = {
-    vi = "vim";
-    ls = "exa";
-    open = "detach xdg-open";
-    o = "open";  
-    py = "python";
-    clip = "xclip";
-  };
+    history = {
+      size = 100000;
+      save = 2000000;
+    };
 
-  initExtra = ''
-    function detach {
-       nohup $@ >/dev/null 2>&1
-    }
-  '';
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "history"
+      ];
+    };
 
-  dirHashes = {
-    # Shortcuts for popular locations
-    ap = "$HOME/code/apertus";
-    au = "$HOME/code/audapolis/audapolis";
-    co = "$HOME/code";
-    dl = "$HOME/Downloads";
-  };
+    shellAliases = {
+      cat = "bat";
+      cd = "z";
+      vi = "vim";
+      open = "detach xdg-open";
+      o = "open";
+      py = "python";
+      clip = "xclip -selection clipboard";
+    };
 
-  sessionVariables = {
-    EDITOR = "vim";
+    initExtra = ''
+      function detach {
+         nohup $* >/dev/null 2>&1
+      }
+
+      function r {
+        rink "$*"
+      }
+    '';
+
+    dirHashes = {
+      # Shortcuts for popular locations
+      ap = "$HOME/code/apertus";
+      au = "$HOME/code/audapolis/audapolis";
+      co = "$HOME/code";
+      dl = "$HOME/Downloads";
+    };
+
+    sessionVariables = {
+      EDITOR = "vim";
+    };
   };
 }
