@@ -14,6 +14,8 @@
   networking.hostName = "niemode";
 
   services.sshd.enable = true;
+  networking.firewall.allowedTCPPorts = [ 22 80 443 ];
+  security.sudo.wheelNeedsPassword = false;
 
   networking.useDHCP = false;
   networking.interfaces.ens3.useDHCP = true;

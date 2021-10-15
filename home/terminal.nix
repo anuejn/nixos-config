@@ -27,6 +27,7 @@
     nodePackages.web-ext
     patchelf
     hydra-check
+    nixopsUnstable
 
     borgbackup
 
