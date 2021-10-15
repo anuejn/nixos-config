@@ -2,7 +2,6 @@
 {
   imports = [ <home-manager/nixos> ];
 
-  nix.trustedUsers = [ "anuejn" ];
   users.users.anuejn = {
     isNormalUser = true;
     home = "/home/anuejn";

@@ -12,9 +12,17 @@
   boot.loader.grub.device = "/dev/sda";
 
   networking.hostName = "niemode";
+  users.motd = ''
+          _                            _      _ 
+    _ __ (_) ___   _ __ ___   ___   __| | ___| |
+    | '_ \| |/ _ \ | '_ ` _ \ / _ \ / _` |/ _ \ |
+    | | | | |  __/ | | | | | | (_) | (_| |  __/_|
+    |_| |_|_|\___| |_| |_| |_|\___/ \__,_|\___(_)
+                                                  
+  '';
 
-  services.sshd.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 80 443 ];
+
   security.sudo.wheelNeedsPassword = false;
 
   networking.useDHCP = false;

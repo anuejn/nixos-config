@@ -8,6 +8,12 @@
     {
       imports = [ ./hosts/niemode/configuration.nix ];
       deployment.targetHost = "45.142.177.123";
-      deployment.targetUser = "anuejn";
+    };
+
+  pink =
+    { config, pkgs, ... }:
+    {
+      imports = [ ./hosts/pink/configuration.nix ];
+      deployment.targetHost = "localhost";
     };
 }
