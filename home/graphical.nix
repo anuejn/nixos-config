@@ -7,6 +7,9 @@
     jetbrains.pycharm-professional
     vscode
 
+    chromium
+    mpv
+
     quasselClient
     fractal
     tdesktop
@@ -21,6 +24,8 @@
 
     gnomeExtensions.night-theme-switcher
     gnomeExtensions.gtk-title-bar
+
+    filezilla
   ];
 
   # some more or less advanced firefox configuration

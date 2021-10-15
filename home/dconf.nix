@@ -11,7 +11,7 @@ in
         per-window = false;
         show-all-sources = true;
         sources = [ (mkTuple [ "xkb" "de+adnw" ]) (mkTuple [ "xkb" "us" ]) ];
-        xkb-options = [ "terminate:ctrl_alt_bksp" "lv3:ralt_switch" "ctrl:swap_lalt_lctl" ];
+        xkb-options = [ "ctrl:swap_lalt_lctl" ];
       };
 
       "org/gnome/desktop/peripherals/touchpad" = {
