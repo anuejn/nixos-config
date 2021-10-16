@@ -5,7 +5,7 @@
       ./hardware-configuration.nix
 
       ../../modules/common.nix
-      ./server.nix
+      ../../modules/server.nix
     ];
 
   boot.loader.grub.enable = true;

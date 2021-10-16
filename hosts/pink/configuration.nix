@@ -3,7 +3,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./interception-tools.nix
 
       ../../modules/common.nix
       ../../modules/workstation.nix
