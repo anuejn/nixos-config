@@ -19,6 +19,7 @@
         name = "automatically merge npm lockfiles";
         driver = "npx npm-merge-driver merge %A %O %B %P";
       };
+      core.editor = "flatpak run --file-forwarding re.sonny.Commit @@";
       init.defaultBranch = "main";
     };
   };

@@ -5,19 +5,32 @@
   ];
 
   home.packages = with pkgs; [
+    file
+    toybox
+    sshfs
+    nmap
+
     gnumake
-    cargo
+    pkgconfig
+    rustup
     clang
+    openssl
 
     nodejs-slim
     nodePackages.npm
-    python3
+    (python3.withPackages (ps: with ps; [
+      numpy
+    ]))
+    poetry
 
+    imagemagick
+    potrace
     pandoc
     htop
     cloc
     rink
     jq
+    ripgrep-all
 
     gh
     pre-commit
@@ -33,5 +46,10 @@
 
     youtube-dl
     ffmpeg
+
+    android-tools
+    shaderc
+
+    texlive.combined.scheme-full
   ];
 }

@@ -15,6 +15,7 @@
     vim
     htop
     killall
+    ntfs3g
   ];
   programs.zsh.enable = true;
 

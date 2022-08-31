@@ -2,6 +2,7 @@
 {
   imports = [
     ./nextcloud.nix
+    # ./hedgedoc.nix
   ];
 
   security.acme = {

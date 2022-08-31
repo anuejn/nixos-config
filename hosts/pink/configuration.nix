@@ -22,6 +22,23 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.plymouth.enable = true;
 
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+      vaapiIntel # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-compute-runtime
+      ocl-icd
+    ];
+  };
+
+  hardware.sensor.iio.enable = true;
+  environment.systemPackages = with pkgs; [
+    iio-sensor-proxy
+  ];
+
   networking.hostName = "pink";
 
   networking.useDHCP = false;

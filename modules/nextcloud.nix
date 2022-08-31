@@ -6,7 +6,7 @@
   };
 
   services.nextcloud = {
-    package = pkgs.nextcloud22;
+    package = pkgs.nextcloud23;
     enable = true;
     hostName = "wolke.niemo.de";
     https = true;

@@ -7,12 +7,12 @@ in
   dconf = {
     enable = true;
     settings = {
-      "org/gnome/desktop/input-sources" = {
-        per-window = false;
-        show-all-sources = true;
-        sources = [ (mkTuple [ "xkb" "de+adnw" ]) (mkTuple [ "xkb" "us" ]) ];
-        xkb-options = [ "ctrl:swap_lalt_lctl" ];
-      };
+      #"org/gnome/desktop/input-sources" = {
+      #  per-window = false;
+      #  show-all-sources = true;
+      #  sources = [ (mkTuple [ "xkb" "de+adnw" ]) (mkTuple [ "xkb" "us" ]) ];
+      #  xkb-options = [ "ctrl:swap_lalt_lctl" ];
+      #};
 
       "org/gnome/desktop/peripherals/touchpad" = {
         speed = 0.55;
@@ -44,7 +44,7 @@ in
         attach-modal-dialogs = true;
         dynamic-workspaces = false;
         edge-tiling = true;
-        workspaces-only-on-primary = true;
+        workspaces-only-on-primary = false;
       };
 
       "org/gnome/shell/keybindings" = {

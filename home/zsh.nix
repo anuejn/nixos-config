@@ -39,6 +39,7 @@
       o = "open";
       py = "python";
       clip = "xclip -selection clipboard";
+      fhs = "~/fhs.sh";
     };
 
     initExtra = ''
