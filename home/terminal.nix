@@ -6,7 +6,6 @@
 
   home.packages = with pkgs; [
     file
-    toybox
     sshfs
     nmap
 
@@ -47,9 +46,11 @@
     youtube-dl
     ffmpeg
 
-    android-tools
     shaderc
 
     texlive.combined.scheme-full
-  ];
+  ] ++ (if !stdenv.isLinux then [  ] else [ 
+    android-tools 
+    toybox
+  ]);
 }
